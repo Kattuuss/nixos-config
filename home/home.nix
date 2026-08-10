@@ -9,6 +9,7 @@
     ./modules/tools
     ./modules/terminal
     ./modules/shell
+    ./modules/desktop
   ];
 
   # User packages

@@ -30,6 +30,24 @@
           }
         ];
       };
+
+#      kattus-rog = nixpkgs.lib.nixosSystem {
+#        system = "x86_64-linux";
+#        modules = [
+#          ./hosts/laptop/nixos-rog-strix-g15/hardware-configuration.nix
+#          ./hosts/laptop/nixos-rog-strix-g15/configuration.nix
+#        ];
+#
+#          # Integrates Home Manager into NixOS
+#          home-manager.nixosModules.home-manager
+#          {
+#            home-manager.useGlobalPkgs = true;
+#            home-manager.useUserPackages = true;
+#
+#            # Imports user home.nix
+#            home-manager.users.kattus = import ./home/home.nix;
+#          }
+#      };
     };
   };
 }

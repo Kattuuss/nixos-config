@@ -42,7 +42,18 @@
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # services.desktopManager.gnome.enable = true;
+
+  # Enable Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  # Fix to visualize cursor inside QEMU VMs
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
