@@ -1,24 +1,31 @@
 { pkgs, ...}:
 
 {
-	home.username = "kattus";
-	home.homeDirectory = "/home/kattus";
+  home.username = "kattus";
+  home.homeDirectory = "/home/kattus";
 
-	# User packages
-	home.packages = with pkgs; [
-		fastfetch
-		btop
-		vim
-	];
+  # Imports modules
+  imports = [
+    ./modules/tools/git.nix
+  ];
 
-	# Programs special configurations
-	programs.bash = {
-		enable = true;
-		shellAliases = {
-			rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config/#kattus-nixos";
-		};
-	};
+  # User packages
+  home.packages = with pkgs; [
+    fastfetch
+    btop
+    vim
+  ];
 
-	home.stateVersion = "26.05";
-	programs.home-manager.enable = true;
+  # Programs special configurations
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
+    };
+  };
+
+  # Enables home manager
+  programs.home-manager.enable = true;
+
+  home.stateVersion = "26.05";
 }
