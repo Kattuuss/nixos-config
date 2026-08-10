@@ -40,9 +40,12 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
+  # Enable GNOME (as a fallback of the fallback)
   services.displayManager.gdm.enable = true;
-  # services.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
+
+  # Enable Niri (as a fallback)
+  programs.niri.enable = true;
 
   # Enable Hyprland
   programs.hyprland = {

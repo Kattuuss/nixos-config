@@ -4,6 +4,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    configType = "hyprlang"; # Until "$mod" bug is fixed, stick to hyprland instead of lua
 
     settings = {
       # Default monitor
@@ -14,7 +15,7 @@
       # Essential environment variables for Wayland
       env = [
         "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE_24"
+        "HYPRCURSOR_SIZE,24"
       ];
 
       # Borders and gaps
@@ -22,8 +23,8 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active.border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive.border" = "rgba(595959aa)";
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
         layout = "dwindle";
       };
 
@@ -31,7 +32,7 @@
       decoration = {
         rounding = 0;
         active_opacity = 0.95;
-        inactive_opacity = 0.85;
+        inactive_opacity = 0.95;
 
         blur = {
           enabled = true;
@@ -46,43 +47,42 @@
         follow_mouse = 1;
       };
 
-      # Super key
-      "$mainMod" = "SUPER";
-
       # Shortcuts (binds)
+      "$mod" = "SUPER";
+
       bind = [
         # Open foot terminal
-        "$mainMod, Return, exec, foot";
+        "$mod, T, exec, foot"
 
         # Windows options
-        "$mainMod, Q, kilactive,";
-        "$mainMod, SHIFT, E, exit";
-        "$mainMod, V, togglefloating,";
-        "$mainMod, F, fullscreen,";
+        "$mod, Q, killactive"
+        "$mod SHIFT, E, exit"
+        "$mod ALT, SPACE, togglefloating"
+        "$mod, F, fullscreen"
 
         # Move focus
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
-        "$mainMod, h, movefocus, l"
-        "$mainMod, l, movefocus, r"
-        "$mainMod, k, movefocus, u"
-        "$mainMod, j, movefocus, d"
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+        "$mod, h, movefocus, l"
+        "$mod, l, movefocus, r"
+        "$mod, k, movefocus, u"
+        "$mod, j, movefocus, d"
 
         # Go to workspace
-        "$mainMod, 1, workspace, 1"
-        "$mainMod, 2, workspace, 2"
-        "$mainMod, 3, workspace, 3"
-        "$mainMod, 4, workspace, 4"
-        "$mainMod, 5, workspace, 5"
+        "$mod, 1, workspace, 1"
+        "$mod, 2, workspace, 2"
+        "$mod, 3, workspace, 3"
+        "$mod, 4, workspace, 4"
+        "$mod, 5, workspace, 5"
 
         # Move to workspace
-        "$mainMod SHIFT, 1, movetoworkspace, 1"
-        "$mainMod SHIFT, 2, movetoworkspace, 2"
-        "$mainMod SHIFT, 3, movetoworkspace, 3"
-        "$mainMod SHIFT, 4, movetoworkspace, 4"
-        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mod SHIFT, 1, movetoworkspace, 1"
+        "$mod SHIFT, 2, movetoworkspace, 2"
+        "$mod SHIFT, 3, movetoworkspace, 3"
+        "$mod SHIFT, 4, movetoworkspace, 4"
+        "$mod SHIFT, 5, movetoworkspace, 5"
       ];
     };
   };
