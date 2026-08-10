@@ -3,10 +3,13 @@
 {
   programs.git = {
     enable = true;
-    userName = "Kattus";
-    userEmail = "alexvalverdetorres2006@gmail.com";
 
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Kattus";
+        email = "alexvalverdetorres2006@gmail.com";
+      };
+
       init.defaultBranch = "main";
       core.editor = "vim";
     };
