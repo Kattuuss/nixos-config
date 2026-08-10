@@ -6,7 +6,9 @@
 
   # Imports modules
   imports = [
-    ./modules/tools/git.nix
+    ./modules/tools
+    ./modules/terminal
+    ./modules/shell
   ];
 
   # User packages
