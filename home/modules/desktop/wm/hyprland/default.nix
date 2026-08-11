@@ -9,8 +9,9 @@
     settings = {
       # Executes at the start
       exec-once = [
-        "mako"
-        "awww-daemon"
+        "waybar"
+	"mako"
+	"awww-daemon"
       ];
 
       # Default monitor
@@ -60,6 +61,13 @@
         # Open foot terminal
         "$mod, T, exec, foot"
 
+        # Open app launcher (Rofi)
+        "$mod, SPACE, exec, rofi -show drun"
+        "$mod SHIFT, SPACE, exec, rofi -show run"
+
+        # Open browser
+        "$mod, W, exec, firefox"
+
         # Windows options
         "$mod, Q, killactive"
         "$mod SHIFT, E, exit"
@@ -89,13 +97,6 @@
         "$mod ALT, 3, movetoworkspace, 3"
         "$mod ALT, 4, movetoworkspace, 4"
         "$mod ALT, 5, movetoworkspace, 5"
-      
-        # App launcher (Rofi)
-	"$mod, SPACE, exec, rofi -show drun"
-	"$mod SHIFT, SPACE, exec, rofi -show run"
-
-	# Browser
-	"$mod, W, exec, firefox"
       ];
     };
   };
