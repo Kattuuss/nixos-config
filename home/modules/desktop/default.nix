@@ -4,5 +4,7 @@
   imports = [
     ./hyprland
     ./niri
+    ./rofi
+    ./apps
   ];
 }

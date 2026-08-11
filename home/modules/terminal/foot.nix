@@ -7,7 +7,7 @@
     settings = {
       main = {
         term = "foot";
-        font = "JetBrainsMono Nerd Font:size=12";
+        font = "JetBrainsMono Nerd Font:size=11";
         pad = "12x12";
       };
       colors-dark = {

@@ -78,11 +78,14 @@
         "$mod, 5, workspace, 5"
 
         # Move to workspace
-        "$mod SHIFT, 1, movetoworkspace, 1"
-        "$mod SHIFT, 2, movetoworkspace, 2"
-        "$mod SHIFT, 3, movetoworkspace, 3"
-        "$mod SHIFT, 4, movetoworkspace, 4"
-        "$mod SHIFT, 5, movetoworkspace, 5"
+        "$mod ALT, 1, movetoworkspace, 1"
+        "$mod ALT, 2, movetoworkspace, 2"
+        "$mod ALT, 3, movetoworkspace, 3"
+        "$mod ALT, 4, movetoworkspace, 4"
+        "$mod ALT, 5, movetoworkspace, 5"
+      
+        # App launcher (Rofi)
+        "$mod, SPACE, exec, rofi -show drun"
       ];
     };
   };

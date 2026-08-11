@@ -13,11 +13,11 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
-      qemu = nixpkgs.lib.nixosSystem {
+      kattus-qemu = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/vm/qemu/hardware-configuration.nix
-          ./hosts/vm/qemu/configuration.nix
+          ./hosts/vm/kattus-qemu/hardware-configuration.nix
+          ./hosts/vm/kattus-qemu/configuration.nix
 
           # Integrates Home Manager into NixOS
           home-manager.nixosModules.home-manager
