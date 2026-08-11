@@ -14,8 +14,13 @@
       hide-scrollbar = true;
       display-drun = "Search Apps";
       display-run = "Run command";
+
+      # -- Not working for some reaason-
+      # kb-element-next = ""; # Disconnects Tab key to go down on the list
+      # kb-mode-next = "Tab"; # Tab switches to the next mode (drun -> run -> filebrowser)
+      # kb-mode-previous = "ISO_Left_Tab"; # Shift + Tab goes backwards (filebrowser -> run -> drun)
     };
-   theme = "purple";
+    theme = "purple";
   };
 
   home.packages = with pkgs; [

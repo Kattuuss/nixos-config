@@ -14,7 +14,7 @@
 
   # User packages
   home.packages = with pkgs; [
-    vim
+  #  yazi
   ];
 
   # Enables home manager

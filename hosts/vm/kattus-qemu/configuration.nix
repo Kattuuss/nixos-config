@@ -16,16 +16,18 @@
   networking.hostName = "kattus-qemu"; # Define your hostname.
   networking.networkmanager.enable = true;
 
+  # Enables OpenSSH
+  services.openssh.enable = true;
+
   # Servers and Graphical Environments (System services)
   services.displayManager.gdm.enable = true; # Enable GNOME Display Manager
-  
-  services.xserver.enable = true; # Enable the X11 windowing system.
-  # services.desktopManager.gnome.enable = true; # Enable GNOME
-  programs.niri.enable = true; # Enable Niri
+  services.displayManager.defaultSession = "hyprland";
 
-  # Enable Hyprland
+  services.xserver.enable = false; # Enable the X11 windowing system.
+  # services.desktopManager.gnome.enable = true;        # Enable GNOME
+  programs.niri.enable = true; # Enable Niri
   programs.hyprland = {
-    enable = true;
+    enable = true; # Enable Hyprland
     xwayland.enable = true;
   };
 
@@ -38,15 +40,23 @@
   users.users."kattus" = {
     isNormalUser = true;
     description = "kattus";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [
+
+    ];
   };
 
   # Essential system packages
   environment.systemPackages = with pkgs; [
     git
-    curl	
+    curl
   ];
+
+  # Allows Mason (Neovim) to download pkgs dynamiclly
+  # programs.nix-ld.enable = true;
 
   # System version
   system.stateVersion = "26.05";

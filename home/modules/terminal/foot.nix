@@ -7,6 +7,7 @@
     settings = {
       main = {
         term = "foot";
+        shell = "${pkgs.fish}/bin/fish";
         font = "JetBrainsMono Nerd Font:size=11";
         pad = "12x12";
       };

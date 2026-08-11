@@ -7,6 +7,12 @@
     configType = "hyprlang"; # Until "$mod" bug is fixed, stick to hyprland instead of lua
 
     settings = {
+      # Executes at the start
+      exec-once = [
+        "mako"
+        "awww-daemon"
+      ];
+
       # Default monitor
       monitor = [
         ",preferred,auto,1"
@@ -85,7 +91,11 @@
         "$mod ALT, 5, movetoworkspace, 5"
       
         # App launcher (Rofi)
-        "$mod, SPACE, exec, rofi -show drun"
+	"$mod, SPACE, exec, rofi -show drun"
+	"$mod SHIFT, SPACE, exec, rofi -show run"
+
+	# Browser
+	"$mod, W, exec, firefox"
       ];
     };
   };
