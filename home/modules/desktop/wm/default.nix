@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./wm
-    ./rice
-    ./apps
+    ./hyprland
+    ./niri
   ];
 }

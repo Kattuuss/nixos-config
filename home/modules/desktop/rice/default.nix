@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./wm
-    ./rice
-    ./apps
+    ./rofi
+    ./waybar
   ];
 }

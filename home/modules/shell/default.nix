@@ -11,10 +11,11 @@
   # Global aliases
   home.shellAliases = {
     rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
-    ls = "eza --icons";
-    ll = "eza -l --icons";
-    la = "eza -la --icons";
-    tree = "eza --tree --icons";
+    clean = "nix-collect-garbage -d";
+    ls = "eza --icons=auto";
+    ll = "eza -l --icons=auto";
+    la = "eza -la --icons=auto";
+    tree = "eza --tree --icons=auto";
   };
 
   # Packages shared by the terminals / CLIs

@@ -16,4 +16,7 @@
     dates = "weekly";
     options = "--delete-generations +5";
   };
+
+  # Avoids /tmp saturation when rebuilding
+  boot.tmp.useTmpfs = false; 
 }

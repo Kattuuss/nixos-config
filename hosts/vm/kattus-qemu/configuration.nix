@@ -20,7 +20,7 @@
   services.displayManager.gdm.enable = true; # Enable GNOME Display Manager
   
   services.xserver.enable = true; # Enable the X11 windowing system.
-  services.desktopManager.gnome.enable = true; # Enable GNOME
+  # services.desktopManager.gnome.enable = true; # Enable GNOME
   programs.niri.enable = true; # Enable Niri
 
   # Enable Hyprland

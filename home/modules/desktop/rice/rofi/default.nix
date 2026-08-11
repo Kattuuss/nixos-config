@@ -15,6 +15,7 @@
       display-drun = "Search Apps";
       display-run = "Run command";
     };
+   theme = "purple";
   };
 
   home.packages = with pkgs; [
