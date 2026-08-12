@@ -15,6 +15,8 @@
     spawn-at-startup "awww-daemon"
     spawn-at-startup "mako"
     spawn-at-startup "waybar"
+    spawn-at-startup "sh" "-c" "wl-paste --type text --watch cliphist store"
+    spawn-at-startup "sh" "-c" "wl-paste --type image --watch cliphist store"
 
     binds {
       // Open foot terminal
@@ -44,6 +46,15 @@
       Mod+Shift+Left  { move-column-left; }
       Mod+Shift+H     { move-column-left; }
       Mod+Shift+L     { move-column-right; }
+
+      // Clipboard + Emoji/Icon selector
+      Mod+V { spawn "sh" "-c" "cliphist list | rofi -dmenu -p Clipboard | cliphist decode | wl-copy"; }
+      Mod+Period { spawn "rofimoji"; }
+
+      // Screenshot capture
+      Mod+Shift+S { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
+      Print { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
+      Ctrl+Print { spawn "sh" "-c" "grim - | wl-copy"; }
     }
   '';
 }

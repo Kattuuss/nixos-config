@@ -4,7 +4,7 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi;
-    terminal = "{$pkgs.foot}/bin/foot"; # Launches the package selected on Rofi from the terminal
+    terminal = "${pkgs.foot}/bin/foot"; # Launches the package selected on Rofi from the terminal
     extraConfig = {
       modi = "drun,run,filebrowser"; # Drun = apps | Run = commands | Filebrowser = files
       show-icons = true;
@@ -14,16 +14,20 @@
       hide-scrollbar = true;
       display-drun = "Search Apps";
       display-run = "Run command";
-
-      # -- Not working for some reaason-
-      # kb-element-next = ""; # Disconnects Tab key to go down on the list
-      # kb-mode-next = "Tab"; # Tab switches to the next mode (drun -> run -> filebrowser)
-      # kb-mode-previous = "ISO_Left_Tab"; # Shift + Tab goes backwards (filebrowser -> run -> drun)
     };
     theme = "purple";
   };
 
+  # Creates a customized ~/.config/rofimoji.rc
+  xdg.configFile."rofimoji.rc".text = ''
+    action = copy
+    selector = rofi
+    prompt = > Type to search emojis
+    files = [emojis, math, nerd_font]
+  '';
+
   home.packages = with pkgs; [
-    papirus-icon-theme
+    papirus-icon-theme # Theme for rofi icons
+    rofimoji # Rofi for emojis
   ];
 }

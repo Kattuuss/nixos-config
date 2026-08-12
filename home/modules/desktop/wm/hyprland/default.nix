@@ -10,8 +10,10 @@
       # Executes at the start
       exec-once = [
         "waybar"
-	"mako"
-	"awww-daemon"
+        "mako"
+        "awww-daemon"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
       ];
 
       # Default monitor
@@ -97,6 +99,15 @@
         "$mod ALT, 3, movetoworkspace, 3"
         "$mod ALT, 4, movetoworkspace, 4"
         "$mod ALT, 5, movetoworkspace, 5"
+
+        # Clipboard + Emoji/Icon selector
+        "$mod, V, exec, cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy"
+        "$mod, period, exec, rofimoji"
+
+        # Screenshot capture
+        "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
+        ", Print, exec, grim -g \"$(slurp)\" - | swappy -f -"
+        "CTRL, Print, exec, grim - | wl-copy"
       ];
     };
   };
